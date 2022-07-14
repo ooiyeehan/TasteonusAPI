@@ -55,6 +55,12 @@ namespace TasteonusAPI.Data
                     .UseMySqlIdentityColumn()
                     .IsRequired();
 
+                entity.Property(e => e.Uid)
+                    .HasColumnName("user_uid")
+                    .HasColumnType("varchar(100)")
+                    .HasMaxLength(100)
+                    .IsRequired();
+
                 entity.Property(e => e.Username)
                     .HasColumnName("user_name")
                     .HasColumnType("varchar(100)")
