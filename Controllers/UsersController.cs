@@ -55,19 +55,19 @@ namespace TasteonusAPI.Controllers
         //    return user[0];
         //}
 
-        //// GET: api/Users/Email?email=example@mail.com
-        //[HttpGet("UserId")]
-        //public async Task<ActionResult<User>> GetUserbyUserId([FromQuery] string userId)
-        //{
-        //    var user = await _context.Users.Where(e => e.UserId == userId).ToListAsync();
+        // GET: api/Users/Email?email=example@mail.com
+        [HttpGet("Uid")]
+        public async Task<ActionResult<User>> GetUserbyUid([FromQuery] string uid)
+        {
+            var user = await _context.Users.Where(e => e.Uid == uid).ToListAsync();
 
-        //    if (user == null)
-        //    {
-        //        return NotFound();
-        //    }
+            if (user == null)
+            {
+                return NotFound();
+            }
 
-        //    return user[0];
-        //}
+            return user[0];
+        }
 
         // PUT: api/Users/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
