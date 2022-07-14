@@ -61,6 +61,31 @@ namespace TasteonusAPI.Data
                     .HasMaxLength(100)
                     .IsRequired();
 
+                entity.Property(e => e.Email)
+                    .HasColumnName("user_email")
+                    .HasColumnType("varchar(100)")
+                    .HasMaxLength(100)
+                    .IsRequired();
+
+                entity.Property(e => e.Password)
+                    .HasColumnName("user_password")
+                    .HasColumnType("varchar(30)")
+                    .HasMaxLength(30);
+
+                entity.Property(e => e.ProfileImageUrl)
+                    .HasColumnName("user_imageurl")
+                    .HasColumnType("longtext");
+
+                entity.Property(e => e.Biodata)
+                    .HasColumnName("user_biodata")
+                    .HasColumnType("longtext");
+
+                entity.Property(e => e.LoginMethod)
+                    .HasColumnName("user_loginmethod")
+                    .HasColumnType("varchar(100)")
+                    .HasMaxLength(100)
+                    .IsRequired();
+
                 entity.Property(e => e.Point)
                     .HasColumnName("user_point")
                     .HasColumnType("int")
