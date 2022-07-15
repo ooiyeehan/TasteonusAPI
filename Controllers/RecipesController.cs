@@ -32,27 +32,27 @@ namespace TasteonusAPI.Controllers
         [HttpGet("{id:int}")]
         public async Task<ActionResult<Recipe>> GetRecipe(int id)
         {
-            var Recipe = await _context.Recipes.FindAsync(id);
+            var recipe = await _context.Recipes.FindAsync(id);
 
-            if (Recipe == null)
+            if (recipe == null)
             {
                 return NotFound();
             }
 
-            return Recipe;
+            return recipe;
         }
 
         // PUT: api/Recipes/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutRecipe(int id, Recipe Recipe)
+        public async Task<IActionResult> PutRecipe(int id, Recipe recipe)
         {
-            if (id != Recipe.Id)
+            if (id != recipe.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(Recipe).State = EntityState.Modified;
+            _context.Entry(recipe).State = EntityState.Modified;
 
             try
             {
