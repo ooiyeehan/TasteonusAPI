@@ -129,18 +129,18 @@ namespace TasteonusAPI.Controllers
         //    }
         //}
 
-        //[HttpGet("User")]
-        //public async Task<ActionResult<IEnumerable<Recipe>>> GetRecipesbyUserId([FromQuery] string userid)
-        //{
-        //    var Recipe = await _context.Recipes.Where(e => e.UserId == userid).ToListAsync();
-            
-        //    if (Recipe == null)
-        //    {
-        //        return NotFound();
-        //    }
+        [HttpGet("User")]
+        public async Task<ActionResult<IEnumerable<Recipe>>> GetRecipesbyUserId([FromQuery] int userid)
+        {
+            var Recipe = await _context.Recipes.Where(e => e.UserId == userid).ToListAsync();
 
-        //    return Recipe;
-        //}
+            if (Recipe == null)
+            {
+                return NotFound();
+            }
+
+            return Recipe;
+        }
 
         [HttpGet("Search")]
         public async Task<ActionResult<IEnumerable<Recipe>>> GetRecipesbySearch([FromQuery] string title)
