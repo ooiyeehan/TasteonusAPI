@@ -16,7 +16,7 @@ namespace TasteonusAPI.Models
         public string Biodata { get; set; }
         public string LoginMethod { get; set; }
         public int Point { get; set; }
-        public Recipe Recipe { get; set; }
+        public List<Recipe> Recipes { get; set; }
         public Feedback Feedback { get; set; }
     }
 }

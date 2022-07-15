@@ -179,7 +179,7 @@ namespace TasteonusAPI.Data
                     .HasColumnName("user_id")
                     .HasColumnType("int");
 
-                entity.HasOne(x => x.User).WithOne(x => x.Recipe).HasForeignKey<Recipe>(x => x.UserId);
+                entity.HasOne(x => x.User).WithMany(x => x.Recipes).HasForeignKey(x => x.UserId);
 
             });
 
