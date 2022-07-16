@@ -130,9 +130,9 @@ namespace TasteonusAPI.Controllers
         //}
 
         [HttpGet("User")]
-        public async Task<ActionResult<IEnumerable<Recipe>>> GetRecipesbyUserId([FromQuery] int userid)
+        public async Task<ActionResult<IEnumerable<Recipe>>> GetRecipesbyUid([FromQuery] string uid)
         {
-            var Recipe = await _context.Recipes.Where(e => e.UserId == userid).ToListAsync();
+            var Recipe = await _context.Recipes.Where(e => e.Uid == uid).ToListAsync();
 
             if (Recipe == null)
             {
