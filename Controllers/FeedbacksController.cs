@@ -42,6 +42,19 @@ namespace TasteonusAPI.Controllers
             return feedback;
         }
 
+        [HttpGet("RecipeId")]
+        public async Task<ActionResult<IEnumerable<Feedback>>> GetFeedbacksbyRecipeId([FromQuery] int recipeId)
+        {
+            var feedbacks = await _context.Feedbacks.Where(e => e.RecipeId == recipeId).ToListAsync();
+
+            if (feedbacks == null)
+            {
+                return NotFound();
+            }
+
+            return feedbacks;
+        }
+
 
         // PUT: api/Feedbacks/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
