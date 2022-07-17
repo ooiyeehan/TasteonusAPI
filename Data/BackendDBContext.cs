@@ -126,7 +126,7 @@ namespace TasteonusAPI.Data
                     .HasColumnName("user_id")
                     .HasColumnType("int");
 
-                entity.HasOne(x => x.User).WithOne(x => x.Feedback).HasForeignKey<Feedback>(x => x.UserId);
+                entity.HasOne(x => x.User).WithMany(x => x.Feedbacks).HasForeignKey(x => x.UserId);
 
 
             });

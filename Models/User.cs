@@ -17,6 +17,6 @@ namespace TasteonusAPI.Models
         public string LoginMethod { get; set; }
         public int Point { get; set; }
         public List<Recipe> Recipes { get; set; }
-        public Feedback Feedback { get; set; }
+        public List<Feedback> Feedbacks { get; set; }
     }
 }
