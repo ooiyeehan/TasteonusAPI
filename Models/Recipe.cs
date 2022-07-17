@@ -13,9 +13,9 @@ namespace TasteonusAPI.Models
         public string Instruction { get; set; }
         public string ImageUrl { get; set; }
         public string VideoUrl { get; set; }
-        public double Rating { get; set; }
         public int UserId { get; set; }
         public string Uid { get; set; }
         public User User { get; set; }
+        public List<Feedback> Feedbacks { get; set; }
     }
 }

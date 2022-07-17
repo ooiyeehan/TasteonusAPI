@@ -126,7 +126,12 @@ namespace TasteonusAPI.Data
                     .HasColumnName("user_id")
                     .HasColumnType("int");
 
+                entity.Property(e => e.RecipeId)
+                    .HasColumnName("rec_id")
+                    .HasColumnType("int");
+
                 entity.HasOne(x => x.User).WithMany(x => x.Feedbacks).HasForeignKey(x => x.UserId);
+                entity.HasOne(x => x.Recipe).WithMany(x => x.Feedbacks).HasForeignKey(x => x.RecipeId);
 
 
             });
@@ -169,11 +174,6 @@ namespace TasteonusAPI.Data
                     .HasColumnName("rec_videourl")
                     .HasColumnType("varchar(400)")
                     .HasMaxLength(400);
-
-                entity.Property(e => e.Rating)
-                    .HasColumnName("rec_rating")
-                    .HasColumnType("decimal(2,1)")
-                    .IsRequired();
 
                 entity.Property(e => e.UserId)
                     .HasColumnName("user_id")

@@ -11,6 +11,8 @@ namespace TasteonusAPI.Models
         public string Description { get; set; }
         public double Rating { get; set; }
         public int UserId { get; set; }
+        public int RecipeId { get; set; }
         public User User { get; set; }
+        public Recipe Recipe { get; set; }
     }
 }

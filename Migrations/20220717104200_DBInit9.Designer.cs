@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TasteonusAPI.Data;
 
 namespace TasteonusAPI.Migrations
 {
     [DbContext(typeof(BackendDBContext))]
-    partial class BackendDBContextModelSnapshot : ModelSnapshot
+    [Migration("20220717104200_DBInit9")]
+    partial class DBInit9
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
